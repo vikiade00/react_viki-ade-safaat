@@ -1,5 +1,5 @@
 
-# Resume Section 4
+# Resume Section 4 
 
 ### Front-end Developer
 Front-end Developer adalah orang yang bertanggung jawab membuat suatu tampilan website dan website tersebut dapat di akses oleh pengguna. Tugas dari seorang front end developer adalah mengubah suatu tampilan yang telah di buat oleh tim UI/UX ke dalam bentuk website
