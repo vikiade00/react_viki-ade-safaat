@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 915px;
+    margin: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    width: 40%;
+    margin-top: 114px;
+    margin-left: 94px;
+    font-size: 48px;
+}
+.hero-p{
+    margin-left: 94px;
+    font-size: 24px;
+    width: 40%;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+a{
+    border: black 1px solid;
+    text-decoration: none;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-left: 94px;
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+
+.btn-secondary{
+    border-color: transparent;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-left: 40px;
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+.hero img{
+    width: 636px;
+    margin-left: 57px ;
+    margin-top: 20px;
+}
+
+.content{
+    display:block;
+    margin-top: 53px;
+    margin-left: 92px;
+}
+
+.content h3,p{
+    margin-bottom:15px ;
+}
+
+input{
+    width: 503px;
+    height: 21px;
+    margin-bottom: 25px;
+}
+
+.btn-get{
+    background-color: transparent;
+    margin-left: 1px;
+    margin-top: 15px;
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+.footer{
+    margin-top: 7px;
+    margin-left: 92px;
+}
+.hr{
+    margin-top: 45px;
+    margin-left: 0;
+}
