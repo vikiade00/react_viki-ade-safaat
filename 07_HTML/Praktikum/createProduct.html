@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Create Produt</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Create Product</h1>
+            <h2 class="detail">Detail Product</h2>
+        </header>
+
+        <div class="form-input">
+            <form action="">
+                <label for="">Product Name:</label>
+                <input class="product-name" name="product-name" type="text" required minlength="6" maxlength="15">    
+                
+                <label for="">Product Category:</label>
+                <select name="" id="">
+                    <option value=""></option>
+                </select>
+            
+                <div class="radio-btn">
+                <label for="">Product Freshness:</label>
+                <p><input required type="radio" id="new" name="Product-freshness"> Brand New</p>
+                <p><input required type="radio" id="second" name="Product-freshness"> Second Hank </p>
+                <p><input required type="radio" id="refurbished" name="Product-freshness"> Refurbished </p>
+                </div>
+                
+                <label for="" id="image">Image of Product</label> <input type="file">
+
+                <label for="">Additional Description</label>
+                <textarea required name="" id="" ></textarea>
+
+                <label for="">Product price :</label>
+                <input required class="price" type="number" placeholder="$ 100">
+
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

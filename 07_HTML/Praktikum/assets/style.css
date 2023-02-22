@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container{
+    margin-left: 8px;
+    margin-top: 19px;
+}
+header h1,h2{
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+label{
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.radio-btn{
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+#image{
+    display: inline;
+}
+
+.product-name{
+    width: 159px;
+    height: 14px;
+}
+
+select{
+    width: 71px;
+}
+
+.radio-btn{
+    margin-left: 0px;
+}
+
+textarea{
+    width: 241px;
+    height: 99px;
+}
+
+.price{
+    display: block;
+    width: 52px;
+    height: 18px;
+    margin-bottom: 6px;
+}
+
+button{
+    width: 50px;
+    height: 20px;
+}
+
+p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nasionality{
+    font-size: 14px;
+}
+
+.btn-create{    
+    width: 100px ;
+    border: transparent;
+    background-color:#D9D9D9;
+    height: 20px;
+}
