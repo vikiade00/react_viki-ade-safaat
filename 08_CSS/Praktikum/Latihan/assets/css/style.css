@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body{
+    font-family: verdana, sans-serif;
+    background: rgb(121,218,232);
+    background: radial-gradient(circle, rgba(121,218,232,1) 0%, rgba(33,85,205,1) 100%);
+    font-size: 12px;
+    height: 100vh;
+    margin: -20px 0 50px;
+    padding: 10px;
+    color: #0AA1DD;
+    font-weight: 600;
+    background-repeat:repeat;
+}
+
+hr{
+    border: 1px solid #0AA1DD;
+}
+label{
+    display: block;
+    padding-top: 9px;
+    padding-bottom: 2px;
+}
+form{
+    margin: 30px;
+    padding: 0px 33px 20px 20px;
+}
+
+h1{
+    padding: 20px 0 0 47px;
+}
+
+button{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    border: none;
+    background-color: #0AA1DD;
+    color: white;
+    border-radius: 7px;
+    padding: 10px ;
+}
+
+button:not(:hover){
+    transition: 1s ease-in;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    border: none;
+    border-color: #0AA1DD;
+    background-color: #0AA1DD;
+    color: white;
+    border-radius: 7px;
+    padding: 10px ;
+}
+
+button:hover{
+    transition: 1s ease-in-out;
+    border: none;
+    background-color: rgb(255, 0, 212);
+    color: white;
+    border-color: #0AA1DD;
+    border-radius: 7px;
+    padding: 10px 172px ;
+    cursor:pointer;
+}
+
+textarea{
+    max-width: 100%;
+    resize: none;
+}
+
+option{
+    background-color: transparent;
+}
+
+fieldset{
+    border-color: #0AA1DD;
+    border-radius: 3px;
+}
+
+.form-input input, select, textarea{
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;    
+    background-color: transparent;
+    border-color: #0AA1DD;
+    width: 100%;
+    padding-left: 10px;
+    color: #0AA1DD;
+    border-width: 3px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.form-input input:focus, textarea:focus, select:focus{
+    outline: none;
+    transition: 1s ease-in;
+    border-bottom: 1px solid #0AA1DD;
+    transition: 0.5s ease-in;
+    background-color: transparent;
+    border-color: rgb(255, 0, 212);
+    width: 100%;
+    border-width: 3px;
+    padding-left: 10px;
+    color: #0AA1DD;
+}
+
+.form-input input:not(:focus), select:not(:focus), textarea:not(:focus){
+    transition: 2s;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;    
+    background-color: transparent;
+    border-color: #0AA1DD;
+    width: 100%;
+    padding-left: 10px;
+    color: #0AA1DD;
+    border-width: 3px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.card{
+        background-color: #E8F9FD;
+        border-radius: 5px;
+        box-shadow: 1px 2px 8px black  ;
+        height: 1200px;
+        margin: 8rem auto 8rem auto;
+        width: 500px;
+}
+
