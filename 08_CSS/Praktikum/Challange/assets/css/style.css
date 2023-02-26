@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 25px auto auto 25px;
+    background-color: rgb(60, 60, 60);
+}
+
+span{
+    background-color: rgb(71, 138, 116);
+    border-radius: 10px;
+    padding: 4px 8px 4px 8px;
+    font-style: italic;
+    font-size: 22px;
+}
+
+
+footer{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 900px;
+    color: white;
+    text-align: center;
+}
+
+h2{
+    margin-top: 30px;
+}
+#univ{
+    margin-top: 10px;
+}
+.container h1, h2{
+    color: white;
+}
+
+.section-1{
+    transition: 0.5s;
+    display: flex;
+    margin: 30px 600px 0px 0px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    background-image:url('../img/laptop.jpg');
+    background-size: 1000px;
+    background-repeat: no-repeat;
+}
+
+.section-1:hover{
+    margin-left: 30px;
+    transform: scale(1.1);
+}
+
+.section{
+    transition: 1s;
+    display: flex;
+    margin: 20px 600px 0px 0px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.section-proyek{
+    transition: 1s;
+    display: flex;
+    text-align: center;
+    margin: 20px 600px 0px 0px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: scroll;
+    height: 500px;
+}
+
+.section:hover{
+    margin-left: 30px;
+    transform: scale(1.1);
+}
+
+.intro-section{
+    display: flex;
+}
+
+.intro-section img{
+    width: 100px;
+}
+
+.intro{
+    margin-left: 20px;
+}
+
+.intro p{
+    padding-bottom: 6px;
+}
+
+.about-p{
+    display: flex;
+    width: 100%;
+    }
+
+.section img{
+    transition: 1s;
+    display: inline;
+    width: 300px;
+}
+
+.quote{
+    transition: 1s;
+    text-align: left;
+    background-color: white;
+    color: black;
+    width: 300px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.quote:hover{
+    transition: 1s;
+    width: 875px;
+    text-align: center;
+}
+
+.img-quote{
+    width: 15px;
+}
+
+.hoby-section{
+    margin-top: 20px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: auto auto;
+    border-radius: 15px;
+    width: 900px;
+}
+
+.hoby{
+    transition: 1s;
+    padding: 15px;
+    display: flex;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.hoby:hover{
+    transition: 1s;
+    transform: scale(1.1);
+}
+
+.hoby img{
+    background-color: white;
+    border-radius: 15px;
+    width: 150px;
+}
+
+.my-proyek h2{
+    margin-top: -10px;
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.my-proyek img {
+    width: 800px;
+    margin: 10px;
+}
+
+.section table{
+    width: 820px;
+}
+.section th, td{
+    padding: 8px;
+    text-align: left;
+    padding-right: auto;
+    border-collapse: collapse;
+}
+
+.section tr:nth-child(even){background-color: #f2f2f2;}
+.section tr:hover {background-color: #ddd;}
+
+
+.footer p{
+    margin-bottom: 10px;
+}
+
+.footer a{
+    display: inline-block;
+    background-color: rgb(71, 138, 116);
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+}
