@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Product</title>
+    <!-- boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- icon-bostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- css lokal -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar shadow navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Sidebar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link me-2" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2 " href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2 " href="#">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2 " href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- akhir navbar -->
+    <!-- header -->
+    <section>
+        <div class="container-sm">
+            <div class="d-flex justify-content-center">
+                <img class="logo-boostrap" src="./assets/img/Bootstrap_logo.svg" alt="logo boostrap">
+            </div>
+            <div class="header text-center pt-4">
+                <h2>Create Product</h2>
+                <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br>validation state that can be triggered by attempting to submit the form without completing it.</p>
+            </div>
+        </div>
+    </section>
+    <!-- akhir header -->
+    <!-- form input -->
+    <div class="container d-flex pt-4 justify-content-center">
+      <div class="input-form d-inline-block justify-content-center">
+        <h3>Detail Product</h3>
+        <form class="rows needs-validation" action="#"  novalidate>
+          <div class="mb-3 col-6">
+            <label for="product-name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="product-name" aria-describedby="inputGroupPrepend" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a Product Name.
+            </div>
+          </div>
+          <div class="mb-3 col-5 pt-3">
+            <label for="product-category" class="form-label">Product Category</label>
+            <select class="form-select" aria-label="Default select example" required>
+              <option value="">Choose..</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a Product Category.
+            </div>
+          </div>
+          <div class="mb-3 col-4 pt-3">
+            <label for="image-name" class="form-label">Image Of Product</label>
+            <input class="input-file form-control border-primary text-primary" type="file" id="formFile" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please choose a Image of Product.
+            </div>
+          </div>
+          <div class="mb-3 pt-3">
+            <label for="image-name" class="form-label">Product Freshness</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" required>
+              <label class="form-check-label" for="exampleRadios1">
+                Brand New
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" required>
+              <label class="form-check-label" for="exampleRadios1">
+                Second Hand
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" required>
+              <label class="form-check-label" for="exampleRadios1">
+                Refushbished
+              </label>
+            </div>
+            </div>
+            <div class="mb-3">
+              <label for="decription" class="form-label">Additional Description</label>
+              <textarea class="form-control" placeholder="Description" rows="5" id="floatingTextarea" required></textarea>          
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a Additional Description.
+              </div>
+            </div>
+            <div class="mb-3 pt-3">
+              <label for="decription" class="form-label">Product Price</label>
+              <input type="number" class="form-control" id="product-name" placeholder="$ 1" required>   
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a Product Price.
+              </div>
+            </div>
+            <div class="container pt-5">
+              <div class="d-grid gap-4 pt-5">
+                <button class="btn btn-primary" type="submit" >Submit</button>
+              </div>
+            </div>
+            </div>
+        </form>
+        <!-- akhir form input -->
+      </div>
+      <!-- List Product -->
+      <div class="container mt-5 mb-5 justify-content-center">
+        <h3 class="text-center" >List Product</h3>
+        <table class="table table-striped">
+          <thead>
+            <th>No</th>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Image of Product</th>
+            <th>Product Freshness</th>
+            <th>Aditional Description</th>
+            <th>Produk Price</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1,0001</td>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>dolor</td>
+              <td>Brand New</td>
+              <td>Adispiscing</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1,0002</td>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>dolor</td>
+              <td>Second Hand</td>
+              <td>Adispiscing</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>1,0003</td>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>dolor</td>
+              <td>Brand New</td>
+              <td>Adispiscing</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>1,0004</td>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>dolor</td>
+              <td>Refushed</td>
+              <td>Adispiscing</td>
+              <td>9</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <!-- Akhir List Product -->
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+    </script>
+  </body>
+</html>

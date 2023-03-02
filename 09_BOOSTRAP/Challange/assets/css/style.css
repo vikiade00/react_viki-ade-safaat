@@ -1,0 +1,94 @@
+*{
+    margin: 0; 
+    padding: 0;
+}
+
+.button a:hover{
+    background-color: gold !important;
+    font-style: bold !important;
+    color: #093f68 !important;
+}
+
+.navbar-brand {
+    margin-left: 70px;
+}
+
+.navbar-nav li{
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.navbar-nav a{
+    transition: 0.5s;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.navbar-nav li:hover a:hover{
+    color: white;
+    background-color: #0d6efd;
+    border-radius: 5px;
+}
+
+.hero-section{
+    height: 700px;
+}
+
+.hero-text{
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 200px;
+}
+
+.hero-text h1{
+    color: #093f68;
+    font-size: 50px;
+}
+.hero-text p{
+    color: #093f68;
+
+    font-size: 30px;
+}
+
+.about-section{
+    height: 700px;
+    padding-top: 60px;
+}
+
+.portofolio-section{
+    height: 1100px;
+    padding-top: 60px;
+}
+
+.input-form{
+    border-radius: 5px;
+    width: 500px;
+    background-color:rgba(220, 220, 220, 0.371);
+    padding: 30px;
+    box-shadow: 5px 5px 5px 5px rgba(15, 15, 15, 0.188);
+    margin-bottom: 50px;
+}
+
+.contact-me{
+    margin-top: 20px;
+}
+
+.contact-me img{
+    width: 30px;
+}
+
+.useful a
+{
+    text-align: left;
+    color: white;
+    text-decoration: none;
+}
+.useful a:hover{
+    transition: 0.5s;
+    color:gold;
+}
+
+.copyright{
+    color: black;
+}
