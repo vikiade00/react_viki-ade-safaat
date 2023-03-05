@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Competence 1 | Welcome Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style2.css">
+    <!-- script -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </head>
+  <body>
+            <div class="welcome-page shadow">
+                <!-- navbar -->
+            <div class="navbar-section" id="home">
+                <nav class="navbar navbar-dark navbar-expand-lg bg-transparant">
+                    <div class="container-fluid">
+                      <a class="navbar-brand ms-5 pb-3" href="#"><span>E</span>LAPTOP</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse justify-content-center me-5" id="navbarNav">
+                        <ul class="navbar-nav navlink">
+                          <li class="nav-item me-4">
+                            <a class="nav-link josenfin" aria-current="page" href="#home">HOME</a>
+                          </li>
+                          <li class="nav-item me-4">
+                            <a class="nav-link josenfin" href="#about">ABOUT</a>
+                          </li>
+                          <li class="nav-item me-4">
+                            <a class="nav-link josenfin" href="#contact">CONTACT</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+
+        <!-- welcome -->
+        <div class="text-center pt-3 text-light align-self-center">
+            <div class="container welcome-text">
+                <div class="">
+                 <h1 class="navbar-brand" ><span>E</span>LAPTOP</h1>
+                </div>
+                <h1 class="pt-2"><span>WELCOME</span> TO OUR PAGE</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aperiam voluptates eius deleniti consectetur voluptas?</p>
+                <br>
+                <a href="#about" type="button" class="btn button text-light">Get Started</a>
+            </div>
+        </div>
+        </div>
+
+        <!-- about -->
+        <div class="container about mt-5 shadow">
+            <h2 id="about" class="text-center pt-5"><span>A</span>BOUT</h2>
+            <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./assets/Laptop-PNG-File.png" width="400px" alt="">
+                </div>
+                <div class="col-8 pt-5">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quam numquam, optio inventore quisquam repudiandae dignissimos! Consequuntur reprehenderit quaerat praesentium nulla quas eligendi. Aspernatur et quia ut? Id, quo quis!</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus blanditiis molestiae atque obcaecati ipsa iure dicta sit, distinctio itaque rerum autem, laborum labore corrupti vel earum ratione reiciendis? Commodi, voluptas?</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum pariatur itaque quidem aut fugit quod officiis vel animi et perspiciatis, voluptatem nisi cum nesciunt tempora voluptate laudantium maxime explicabo. Fugit!</p>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-8 pt-5">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quam numquam, optio inventore quisquam repudiandae dignissimos! Consequuntur reprehenderit quaerat praesentium nulla quas eligendi. Aspernatur et quia ut? Id, quo quis!</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus blanditiis molestiae atque obcaecati ipsa iure dicta sit, distinctio itaque rerum autem, laborum labore corrupti vel earum ratione reiciendis? Commodi, voluptas?</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum pariatur itaque quidem aut fugit quod officiis vel animi et perspiciatis, voluptatem nisi cum nesciunt tempora voluptate laudantium maxime explicabo. Fugit!</p>
+                </div>
+                <div class="col-4">
+                    <img src="./assets/588524d86f293bbfae451a31.png" width="400px" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- contact -->
+        <div class="container pt-5">
+            <div class="content pb-5 pt-5">
+                <div class="container text-center">
+                    <h2><span>C</span>ONTACT</h2>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-3 pt-5">
+                      <img src="./assets/img/contact.png" width="50" alt="">
+                      <h3 id="contact">Contact Us</h3>
+                      <p>
+                        Need to get in touch with us? Either fill out the form <br>
+                        with your inquiry or find the departement email you'd <br>
+                        like to contact below
+                    </p>
+                    </div>
+                    <div class="col-lg-6 col-lg-3 mt-3 text-start">
+                      <div class="container">
+                        <form action="" class="contact pt-5 needs-validation" novalidate>
+                          <div class="col-12 d-flex">
+                            <input id="first-name" class="form-control mb-3" type="text" placeholder="First Name" required>&nbsp;&nbsp;&nbsp;
+                            <input id="last-name" class="form-control mb-3" type="text" placeholder="Last Name" required>                            
+                          </div>
+                          <input id="email" class="form-control mb-3" type="text" placeholder="Your Email" required>
+                          <textarea id="message" class="form-control mb-3" name="" id="" cols="50" rows="10" placeholder="Your Message" required></textarea>
+                          <button class="btn text-light button" id="button" type="submit">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- footer -->
+            <div class="footer text-center bg-dark text-light">
+                <footer class="p-3">Copyright ©2023 <span>Elektronic</span> Laptop</footer>
+            </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+        // validasi
+    (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+        }, false)
+    })
+    })()
+    // Alert 
+    $(document).ready(function(){
+    
+    $("#button").click(function(){
+        var fisrtName = $('#first-name').val();
+        var lastName = $('#last-name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+
+        alert('First Name = ' +fisrtName + '\nLast Name = ' + lastName + '\nEmail = ' + email + '\nMessage = ' + message );
+    })
+    })
+    </script>
+</body>
+</html>

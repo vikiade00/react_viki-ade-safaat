@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #c5c5c5;
+}
+
+span{
+    color: #c8528e;
+}
+
+h3{
+    color: #c8528e;
+    padding-bottom: 10px;
+}
+
+footer{
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+    color: #c5c5c5;
+    padding: 10px 0 10px 0;
+}
+
+a:hover{
+    color: #c8528e;
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #383838;
+    height: 300px;
+}
+.web-name{
+    padding: 50px 0 50px 50px;
+}
+
+.web-name h1, p{
+    margin-bottom: 10px;
+}
+
+.button{
+    background-color: #c8528e;
+    color: #fff;
+    border-color: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: 0.5;
+}
+
+.button:hover{
+    transition: 0.5;
+    background-color: #f04aa0;
+    color: #FFF;
+}
+
+.about{
+    padding-top: 50px;
+    width: 200px;
+}
+
+.learn{
+    text-decoration: none;
+    color: #fff;
+}
+
+.sosmed{
+    padding-top: 50px;
+}
+
+.icon-sosmed i{
+    font-size: 30px;
+    margin-right: 5px;
+    transition: 0.5s;
+}
+
+.icon-sosmed i:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.input-text{
+    border-radius: 15px;
+    border-color: transparent;
+    margin-top: 10px;
+    padding: 5px;
+    width: 240px;
+    color: #c8528e;
+}
+
+.btn-sign{
+    border-radius: 15px;
+    margin-left: -93px;
+}
+
+.overview{
+    padding-top: 50px;
+}
+
+.overview a{
+    text-decoration: none;
+}
+
+.overview p{
+    margin-left: 10px;
+}
