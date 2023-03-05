@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+h1{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+span{
+    color: #3da1ff;
+}
+
+.navlink a:hover{
+    color: #3da1ff !important;
+}
+.welcome-page{
+    background-image: url(../assets/pexels-veeterzy-303383.jpg);
+    background-size: cover;
+    background-position: 50% 0;
+    opacity: 0.9;
+    height: 750px;
+}
+
+.welcome-text{
+    background-color: #0000007e;
+    border-radius: 8px;
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+.carousel{
+    width: 600px;
+}
+
+.navbar-brand{
+    font-family: 'Orbitron', sans-serif;
+}
+
+.josefin{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar a{
+    color: #fff;
+}
+
+.btn {
+    background-color: #1a558b;
+    border-color: transparent;
+
+}
+
+.about{
+    height: 750px;
+}
+
+.button:hover{
+    background-color: #4485c3;
+    color: #fff;
+}
