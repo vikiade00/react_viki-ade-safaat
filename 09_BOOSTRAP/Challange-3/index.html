@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fish Resource List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+  <body>
+    <!-- header -->
+    <div class="container container-content">
+        <div class="header">
+            <div class="header-body pt-4 ps-4 mt-4">
+                <h2><b>Fish Resources List</b></h2>
+                <label for="">Fish Price Data in Indonesia</label>
+                <div class="divider mt-2 mb-2">&nbsp;</div>
+                <a href="./add.html" class="btn button-add mb-3">Add Data</a>
+            </div>
+          </div>
+          <div class="filter-content p-4">
+            <div class="row">
+            <div class="col search d-flex">
+                    <label for=""><i class="fa-solid fa-magnifying-glass pt-2"></i></label>
+                    <input type="text" class="form-control input-filter" placeholder="Type your keyword by commodity">
+            </div>
+            <div class="col">
+                <button class="btn btn-filter d-flex" onclick="toggleElement()"><i class="fa-solid fa-filter pt-1 me-2"></i>Filter</button>
+            </div>
+            </div>
+            <div class="advance-filter mt-3" id="elemen">
+                <div class="container ps-3 pt-2">
+                    <label for="" class="pb-2"><b>Advanced Filter</b></label>
+                    <form action="">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="" class="pb-1">City</label>
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option disabled selected hidden>Select City</option>
+                                <option value="1">Bandung</option>
+                                <option value="2">Jakarta</option>
+                                <option value="3">Solo</option>
+                                <option value="4">Yogya</option>
+                              </select>
+                        </div>
+
+                        <div class="col-4 left">
+                            <label for="" class="pb-1">Province</label>
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option disabled hidden selected>Select Province</option>
+                                <option value="1">Jawa Barat</option>
+                                <option value="2">Jawa Tengah</option>
+                                <option value="3">Jawa Timur</option>
+                              </select>
+                        </div>
+
+                        <div class="col-4 left">
+                            <label for="" class="pb-1">Size</label>
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option disabled hidden selected>Select Size</option>
+                                <option value="1">20</option>
+                                <option value="2">30</option>
+                                <option value="3">40</option>
+                                <option value="3">50</option>
+                                <option value="3">60</option>
+                                <option value="3">70</option>
+                                <option value="3">80</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="mt-4 mb-4"> 
+                        <label for="customRange1" class="form-label">Price range</label><br>
+                        <input type="range" class="form-range" id="customRange1">
+                    </div>
+
+                    <button class="btn bg-merah btn-reset mb-3">Reset</button>
+                </form>
+                </div>
+            </div>
+            
+            <div class="col d-flex pt-4">
+                <p style="font-size: 13px;">Sort By :&nbsp;&nbsp;</p>
+                <div class="sort-by">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-light" for="btnradio1"><i class="fa-solid fa-calendar-days"></i> &nbsp; Date</label>
+                  
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-light" for="btnradio2"><i class="fa-solid fa-arrow-up-a-z"></i> &nbsp; A-Z</label>
+                  
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-light" for="btnradio3"><i class="fa-solid fa-arrow-down-z-a"></i> &nbsp; Z-A</label>
+                  </div>   
+                </div>
+                </div>
+          </div>
+
+          <!-- content -->
+          <div class="content mt-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                
+                <div class="col">
+                  <div class="card shadow shadow h-100">
+                    <div class="card-body">
+                        <label for="bawal">BAWAL</label><br>
+                        <label for="harga"><b>Rp98.000</b></label><br>
+                        <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <label class="label-kecil" for="qty">Size: 100</label>
+                            </div>
+                            <div>
+                                <button class="btn btn-edit btn-kecil bg-tosca">Edit</button>
+                                <button class="btn btn-delete btn-kecil bg-merah">Delete</button>    
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card shadow h-100">
+                      <div class="card-body">
+                          <label for="bawal">BAWAL</label><br>
+                          <label for="harga"><b>Rp98.000</b></label><br>
+                          <label class="label-kecil" for="kota"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; Bekasi - Jawabarat</label>
+                          <hr>
+                          <div class="d-flex justify-content-between">
+                              <div>
+                                  <label class="label-kecil" for="qty">Size: 100</label>
+                              </div>
+                              <div>
+                                  <button class="btn btn-kecil btn-edit bg-tosca">Edit</button>
+                                  <button class="btn btn-kecil btn-delete bg-merah">Delete</button>    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+             </div>
+        </div>
+        <!-- pagination -->
+        <div class="data mt-3">
+            <p class="p-2" style="font-size: 13px;">Total : 186 Data's</p>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-start">
+              <li class="page-item disabled me-2">
+                <a class="page-link"><</a>
+              </li>
+              <li class="page-item"><a class="page-link me-2" href="#">1</a></li>
+              <li class="page-item"><a class="page-link me-2" href="#">2</a></li>
+              <li class="page-item"><a class="page-link me-2" href="#">3</a></li>
+              <li class="page-item"><a class="page-link me-2" href="#">4</a></li>
+              <li class="page-item"><a class="page-link me-2" href="#">5</a></li>
+              <li class="page-item"><a class="page-link me-2" href="#">6</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">></a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+    <!-- footer -->
+    <div class="footer text-center">
+        <p class="pt-4" style="font-size: 11px;">
+        <b>Build Proudly By:</b> <br><br>
+        Viki Ade Safaat @2023 |&nbsp;&nbsp; <a href="https://www.linkedin.com/in/viki-ade-safaat-2a0720244/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://github.com/vikiade00" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </p> 
+      </div>
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <script>
+        function toggleElement() {
+            var x = document.getElementById("elemen");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        } 	
+        </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #ecfdf6;
+}
+
+.form-select{
+    width: 326px;
+    border-color: #4dc7a0;
+    border-radius: 8px;
+}
+
+.form-range{
+    width: 1000px;
+}
+
+.btn-reset{
+    padding: 3px 40px 3px 40px;
+    border-radius: 20px;
+    color: #FFFF;
+}
+
+.btn-reset:hover{
+    background-color: #fb868a;
+    color: white;
+}
+
+.left{
+    margin-left: -34px;
+}
+
+.container{
+    width: 1125px;
+}
+
+.header{
+    background-image: url(../img/background.webp);
+    background-size: cover;
+    height: 170px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.divider{
+    background-color: #4dc7a0;
+    width: 50px;
+    height: 5px;
+    border-radius: 8px;
+}
+
+.button-add{
+    background-color: #4dc7a0 !important;
+    color: white !important;
+    border-radius: 10px;
+    padding: 3px 25px;
+    font-size: 15px;
+}
+
+.button-add:hover{
+    background-color: #266551 !important;
+}
+
+.btn-delete:hover { 
+    background-color: #fb868a !important;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #266551;
+    color: white;
+}
+
+
+/* filrer content */
+.filter-content{
+    background-color: #FFFF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.search{
+    background-color: white;
+    border: solid;
+    border-color: #4dc7a0;
+    border-width: 1px;
+    width: 850px;
+    margin-left: 7px;
+    border-radius: 8px;
+}
+
+.input-filter{
+    border-color: transparent;
+    height: 28px;
+    width: 830px;
+}
+
+.btn-filter{
+    background-color: gold;
+    padding: 2px 60px 2px 60px;
+}
+
+.btn-filter:hover{
+    background-color: gold;
+}
+
+.card:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.advance-filter{
+    transition: 1s;
+    display: none;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.373);
+    border-style: solid;   
+    border-radius: 8px;
+    width: 1033px;
+}
+
+/* sortby */
+.sort-by{
+    background-color: #e7f3ef;
+    width: 220px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.sort-by a{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    margin: 3px;
+    padding: 5px;
+}
+
+.btn-group{
+    margin-left: 4px;
+    height: 25px;
+    width: 210px;
+}
+
+.btn-group label{
+    font-size: 12px;
+    color: black;
+}
+
+.btn-group label:hover{
+    color: black !important;
+}
+
+/* content */
+.card{
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+.label-kecil{
+    font-size: 10px;
+}
+
+.btn-kecil{
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+    margin-right: 6px;
+    padding: 1px 13px 1px 13px;
+}
+
+.bg-tosca{
+    background-color: #4dc7a0;
+}
+
+.bg-merah{
+    background-color: #ff4d4f;
+}
+
+/* data */
+.data {
+    width: 150px;
+    background-color: #d3f1e8;
+    border-radius: 8px;
+}
+
+.navigation li, a {
+    color: #4dc7a0 !important;
+}
+
+/* footer */
+.footer {
+    background-color: #d3f1e8;
+    height: 100px;
+}
+
+.footer a {
+    background-color: #4dc7a0;
+    border-radius: 50px;
+    padding: 3px;
+    margin-right: 5px;
+}
+
+.footer i {
+    color: #d3f1e8;
+    padding: 3px;
+    font-size: 13px;
+
+}
+
+/* INI STYLE ADD FORM */
+
+.header-add{
+    background-image: url(../img/background.webp);
+    background-size: cover;
+    height: 120px;
+    border-radius: 20px;    
+}
+
+.add-form{
+    padding-top: 20px;
+    padding-left: 90px !important;
+}
+
+.add-container {
+    margin-top: 30px;
+    background-color: #fff;
+    width: auto;
+    height: 400px;
+    border-radius: 20px;
+    margin-bottom: 200px;
+}
+
+.input-text{
+    width: 600px;
+    height: 35px;
+    border-color: #4dc7a0;
+}
+
+.rp {
+    width: 50px;
+}
+
+.input-text-price{
+    width: 550px;
+    height: 35px;
+    border-color: #4dc7a0;
+}
+
+.btn-cancel{
+    background-color: gold;
+    width: 210px;
+    text-decoration: none;
+    color: black !important;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.btn-save{
+    background-color: #4dc7a0;
+    width: 210px;
+    border-radius: 10px;
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-save:hover{
+    background-color: #266551;
+}
