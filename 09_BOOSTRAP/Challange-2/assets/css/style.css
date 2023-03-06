@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+span {
+  color: green;
+}
+
+.navbar-brand {
+  color: rgb(59, 59, 59);
+  font-family: "Gloock", serif;
+}
+
+.navbar a{
+  margin-right: 20px;
+}
+
+.navbar a:hover{
+  color: #71c55f !important;
+}
+
+.content {
+  background-color: #71c55f;
+}
+
+.text-welcome {
+  font-family: "Gloock", serif;
+  color: #71c55f;
+  font-style: bold;
+}
+
+.button {
+  transition: 0.5s;
+
+  background-color: #71c55f;
+  text-decoration: none;
+  color: white;
+  padding: 5px 50px;
+  border-radius: 20px;
+}
+
+.button:hover {
+  transition: 0.5s;
+  background-color: gold;
+}
+
+.card{
+  transition: 0.5s;
+  background-color: #71c55f;
+}
+
+.card:hover{
+  transition: 0.5s;
+  background-color: gold;
+}
+
+.contact{
+  padding: 30px;
+  border-radius: 8px;
+  background-color: rgba(244, 244, 244, 0.455);
+}
+
+.button-submit{
+  transition: 0.5s;
+  background-color: green;
+  color: white;
+}
+
+.button-submit:hover{
+  transition: 0.5s;
+  background-color: gold;
+}
+
+.footer{
+  background-color: rgb(162, 161, 161);
+}
+
+.footer i{
+  width: 38px;
+}
+
+.menu a{
+  color: green;
+  text-decoration: none;
+}
+
+.menu a:hover{
+  transition: 0.5s;
+  color: gold;
+}
