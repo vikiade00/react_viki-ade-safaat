@@ -100,26 +100,32 @@ function submitForm() {
     }
     
     if (productNameValid && productCategoryValid && imageValid && productFreshnessValid && descriptionValid && priceValid) {
-    
+      
+      var dataArray = [];
       // Ambil data dari formulir input
-  var productName = document.getElementById("product-name");
-  
-  // Tambahkan data ke dalam array
-  dataArray.push([productName]);
+      var productName = document.getElementById("product-name").value;
+      var productCategory = document.getElementById("product-category").value;
+      var image = document.getElementById("image").value;
+      var productFreshness = document.getElementById("product-freshness").value;
+      var description = document.getElementById("description").value;
+      var price = document.getElementById("price").value;
+      
+      // Tambahkan data ke dalam array
+      dataArray.push([productName, productCategory, image, productFreshness, description, price]);
 
-  // Kosongkan formulir input
-  document.getElementById("form-product").reset();
+      // Kosongkan formulir input
+      document.getElementById("form-product").reset();
 
-  // Tampilkan data di dalam tabel
-  var tableBody = document.getElementById("table-product").getElementsByTagName("tbody")[0];
-  tableBody.innerHTML = "";
-  for (var i = 0; i < dataArray.length; i++) {
-    var row = tableBody.insertRow(-1);
-    for (var j = 0; j < dataArray[i].length; j++) {
-      var cell = row.insertCell(-1);
-      cell.innerHTML = dataArray[i][j];
-    }
-  }
+      // Tampilkan data di dalam tabel
+      var tableBody = document.getElementById("table-product").getElementsByTagName("tbody")[0];
+      tableBody.innerHTML = "";
+      for (var i = 0; i < dataArray.length; i++) {
+        var row = tableBody.insertRow(-1);
+        for (var j = 0; j < dataArray[i].length; j++) {
+          var cell = row.insertCell(-1);
+          cell.innerHTML = dataArray[i][j];
+        }
+      }
             
 
     }
