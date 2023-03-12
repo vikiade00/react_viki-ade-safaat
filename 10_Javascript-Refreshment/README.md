@@ -1,4 +1,4 @@
-### (9) Resume Javascript 
+### (10) Resume Javascript 
 #### Javascript
 Javascript merupakan suatu bahasa pemrograman yang sering digunakan dalam pembuatan web, karena dengan adanya javascript, suatu web dapat dipergunakan dengan semestinya. Karena javascipt sendiri bisa dianalogikan sebagai penggerak atau otak dari suatu web
 
