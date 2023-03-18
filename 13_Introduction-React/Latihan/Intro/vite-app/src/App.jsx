@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import iconMan from '../src/assets/img/man.png'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const user={
+    name : "Viki Ade Safaat",
+    universitas : "STMIK Mardira Indonesia",
+    semester : "6",
+    about : "Perkenalankan nama saya viki ade safaat tinggal di Bandung, Anak ke dua dari dua bersaudara, Cita cita jadi programmer. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit ullam aliquid rem dolorem aliquam? Optio magnam nulla distinctio similique suscipit?"
+}
   return (
     <div className="App">
       <div>
@@ -16,12 +22,12 @@ function App() {
       <div>
         <div className="section bg-section">
             <div className="intro-section">
-              <img src="../src/assets/img/man.png" alt="Icon Man" width={100} />
+              <img src={iconMan} alt="Icon Man" width={100} />
               <div className="intro">
-                <p>Viki Ade Safaat</p>
+                <p>{user.name}</p>
                 <hr />
-                <p>Universitas : STMIK Mardira Indoenesia</p>
-                <p>Semester : 6</p>
+                <p>Universitas : {user.universitas}</p>
+                <p>Semester : {user.semester}</p>
               </div>
             </div>
         </div>
@@ -32,9 +38,9 @@ function App() {
         <div className="section">
           <div className="about-section">
             <div className="about-text">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur numquam deserunt veniam placeat iste sint, vitae commodi distinctio ipsam, quas eos a, eveniet quam omnis consequuntur ducimus sapiente nulla laborum officia repudiandae nostrum unde. Nesciunt aut assumenda distinctio eum aspernatur quos, ea labore repellat quaerat ipsam sunt impedit, debitis expedita!</p>
+              <p>{user.about}</p>
             </div>
-            <img src="../src/assets/img/Watermelon_Isometric.svg" alt="" width={300}/>
+            <img src="../src/assets/img/Watermelon_Isometric.svg" alt="gambar about" width={300}/>
           </div>
         </div>
       </div>
@@ -42,7 +48,7 @@ function App() {
       <div>
         <h2>Life Quote</h2>
         <div className="quote-section">
-          <img src="../src/assets/img/left-quotes-sign.png" alt="" width={20}/>
+          <img src="../src/assets/img/left-quotes-sign.png" alt="icon kutip" width={20}/>
           <p>Hidup Seperti Lery</p>           
           </div>
       </div>

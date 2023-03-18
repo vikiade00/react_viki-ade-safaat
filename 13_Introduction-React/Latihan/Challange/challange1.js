@@ -4,4 +4,7 @@ function reverseAngka(num){
     return negativ ? -revesenum : revesenum;
 }
 
-console.log(reverseAngka(-18))
+console.log(reverseAngka(21))
+console.log(reverseAngka(20))
+console.log(reverseAngka(-100))
+console.log(reverseAngka(-20))

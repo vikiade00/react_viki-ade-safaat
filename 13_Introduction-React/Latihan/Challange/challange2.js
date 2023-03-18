@@ -3,5 +3,5 @@ function cekKata(kata){
     return kata === reverseKata;
 }
 
-console.log(cekKata('kasur rusak'));
+console.log(cekKata('kasur ini rusak'));
 console.log(cekKata('ini hasilnya false'));

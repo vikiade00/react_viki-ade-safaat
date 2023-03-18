@@ -1,0 +1,39 @@
+.inputForm{
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-bottom: 10%;
+}
+
+.input-text{
+    width: 282px;
+}
+
+.select-input{
+    width: 225px;
+}
+.text-area, .input-number, .submit-button{
+    width: 540px;
+}
+
+.submit-button{
+    background-color: #0D6EFD;
+    color: #FFF;
+}
+
+@media only screen and (max-width: 600px) {
+    /* style untuk layar dengan lebar 600px atau kurang */
+    body {
+      font-size: 16px;
+    }
+
+    .inputForm{
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-bottom: 10%;
+    }
+    .text-area, .input-number, .submit-button{
+        width: 300px;
+    }
+  }
+  
+  
