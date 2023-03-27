@@ -1,0 +1,43 @@
+label {
+  color: teal;
+  font-weight: 700;
+}
+
+.contactPage {
+  display: flex;
+  justify-content: center;
+}
+
+.cardContact {
+  background-color: aliceblue;
+  width: 420px;
+  height: auto;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: justify;
+  box-shadow: 0px 4px 15px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.imageProfile {
+  width: 130px;
+  margin-top: -80px;
+  border-radius: 50%;
+  background-color: aquamarine;
+  box-shadow: -1px -2px 14px 1px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: -1px -2px 14px 1px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: -1px -2px 14px 1px rgba(0, 0, 0, 0.22);
+}
+
+.formControl {
+  margin-bottom: 20px;
+}
+
+.inputMessage {
+  margin-top: 10px;
+  border: solid;
+  border-width: 2px;
+  border-color: #0dc2c2;
+  border-radius: 8px;
+  resize: none;
+}
