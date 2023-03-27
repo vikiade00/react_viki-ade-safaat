@@ -1,31 +1,62 @@
-  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 .header-text {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Bungee", cursive;
   text-align: center;
-  color: #FFF;
- }
+  color: #fff;
+  margin-top: -10px;
+}
 
-.card{
+img {
+  background-color: #00ddeb;
+  width: 20px;
+  border-radius: 50%;
+  justify-content: end;
+  height: 20px;
+  margin-top: -4px;
+  margin-right: 5px;
+}
+
+.card {
   height: auto;
-  width: 500px;
+  width: 240px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
   padding: 5px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  background-image: linear-gradient(144deg,#00DDEB, #407cff 50%,#5B42F3);
+  box-shadow: rgba(82, 56, 228, 0.842) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg, #00ddeb, #407cff 50%, #5b42f3);
 }
 
-.content{
-  padding: 15px;
+.header {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.button button{
-  background-color: #FFF;
+.content {
+  padding: 13px;
+}
+
+.text-area {
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.button button {
+  font-family: "Bungee", cursive;
+  background-color: #fff;
   color: #407cff;
-  width: 90px;
-  height: 70px;
-  padding: 0px;
+  width: 50px;
+  height: 40px;
+  margin-bottom: 2px;
+}
+
+#button-0 {
+  width: 103px;
+  margin-right: 4px;
+}
+
+#buttonKoma {
+  margin-right: 3px;
 }
