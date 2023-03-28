@@ -5,9 +5,9 @@ import NavbarComponent from "../../components/navbar/NavbarComponent";
 const CreateProduct = () => {
   return (
     <div>
-        <NavbarComponent/>
-        <HeaderComponent/>
-        <ContentComponent/>
+      <NavbarComponent />
+      <HeaderComponent />
+      <ContentComponent />
     </div>
   );
 };

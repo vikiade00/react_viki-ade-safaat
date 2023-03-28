@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Input, Select, message, Upload, Radio, Space, InputNumber } from "antd";
+import { Button, Form, Input, Select, message, Upload, Radio, Space, InputNumber, Alert } from "antd";
 import "./contentComponent.css";
 import { UploadOutlined } from "@ant-design/icons";
 import { useState } from "react";
@@ -36,10 +36,21 @@ const props = {
 const ContentComponent = () => {
   // form & radio button ant desgin
   const [form] = Form.useForm();
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState();
+  const [showAlert, setShowAlert] = useState(false);
   const onChange = (e) => {
-    console.log("radio checked", e.target.value);
     setValue(e.target.value);
+  };
+
+  const handlingEvent = (event) => {
+    const input = event.target.value;
+    if (input.length > 10) {
+      setShowAlert(true);
+      setInputValue(input.slice(0, 10));
+    } else {
+      setShowAlert(false);
+      setInputValue(input);
+    }
   };
 
   return (
@@ -47,7 +58,8 @@ const ContentComponent = () => {
       <h3>Detail Product</h3>
       <Form form={form} layout="vertical">
         <Form.Item label="Product Name">
-          <Input placeholder="product name" className="input-text" value={productName} onChange={handleProductNameChange} />
+          <Input placeholder="product name" className="input-text" value={value} onChange={handlingEvent} />
+          {showAlert && <Alert message="Input tidak boleh melebihi 10 karakter!" type="error" showIcon className="alert" />}
         </Form.Item>
 
         <Form.Item label="Product Category" className="select-input">

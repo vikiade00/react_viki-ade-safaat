@@ -27,6 +27,10 @@
   margin-top: 10px;
 }
 
+.alert {
+  margin-top: 10px;
+  width: 250px;
+}
 @media only screen and (max-width: 600px) {
   /* style untuk layar dengan lebar 600px atau kurang */
   body {
