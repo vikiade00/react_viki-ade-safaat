@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.footer span {
+  color: #50aaff;
+}

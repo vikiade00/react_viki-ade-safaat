@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+p {
+  line-height: 2;
+}
+
+.button {
+  background-color: #1a558b;
+  color: #fff;
+}
+
+.titlePage {
+  padding-top: 50px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.titlePage span {
+  color: #50aaff;
+}

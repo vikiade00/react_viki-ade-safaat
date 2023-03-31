@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.brandNav {
+  margin: 15px 0 0 64px;
+  font-size: 20px;
+}
+
+.navLink {
+  margin-right: 37%;
+  margin-top: 9px;
+}
+
+.navLink li,
+a {
+  color: #fff;
+  display: inline;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3da1ff;
+}

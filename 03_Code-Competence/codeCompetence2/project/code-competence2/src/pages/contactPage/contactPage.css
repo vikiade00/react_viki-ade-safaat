@@ -1,0 +1,13 @@
+.contactPage {
+  margin-top: 200px;
+  height: 80vh;
+  margin-bottom: 30px;
+}
+.contactSection {
+  display: flex;
+  justify-content: center;
+}
+.contactContent {
+  width: 60rem;
+  margin-top: 20px;
+}
