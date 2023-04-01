@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout, Menu, theme } from "antd";
 import { MENU_ITEM } from "../constans";
-import BgImage from "../../assets/rm222-mind-16.jpg";
 import FooterComponent from "./footer/FooterComponent";
 import HeaderComponent from "./header/HeaderComponent";
 
@@ -24,8 +23,7 @@ export default function LayoutComponent({ children }) {
             display: "flex",
             justifyContent: "center",
             paddingTop: "100px",
-            backgroundImage: `url(${BgImage})`,
-            backgroundSize: "cover",
+            backgroundColor: "#FFF",
           }}
         >
           {children}

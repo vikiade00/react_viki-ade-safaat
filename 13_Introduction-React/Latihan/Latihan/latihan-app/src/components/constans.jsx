@@ -1,20 +1,38 @@
-import Link from "../router/Link";
+import { Button } from "antd";
+import { Link } from "react-router-dom";
 
 export const MENU_ITEM = [
   {
-    label: <Link href="/">Home Page</Link>,
+    label: <Link to="/home">Home Page</Link>,
     key: "1",
   },
   {
-    label: <Link href="/about">About</Link>,
+    label: <Link to="/about">About</Link>,
     key: "2",
   },
   {
-    label: <Link href="/contact">Contact</Link>,
+    label: <Link to="/contact">Contact</Link>,
     key: "3",
   },
   {
-    label: <Link href="/form">Form</Link>,
+    label: <Link to="/form">Form</Link>,
     key: "4",
+  },
+
+  {
+    label: (
+      <Link to="/">
+        <Button
+          type="primary"
+          onClick={() => {
+            localStorage.removeItem("token");
+          }}
+          danger
+        >
+          Logout
+        </Button>
+      </Link>
+    ),
+    key: "5",
   },
 ];

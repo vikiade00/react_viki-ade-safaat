@@ -1,15 +1,23 @@
+import { Button, Card } from "antd";
 import React from "react";
-import { Button, Space } from "antd";
+import { useNavigate } from "react-router-dom";
+import "./loginPage.css";
+
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const onLogin = () => {
+    localStorage.setItem("token", true);
+    navigate("/home");
+  };
+
   return (
-    <div>
-      <Space wrap>
-        <Button type="primary">Primary Button</Button>
-        <Button>Default Button</Button>
-        <Button type="dashed">Dashed Button</Button>
-        <Button type="text">Text Button</Button>
-        <Button type="link">Link Button</Button>
-      </Space>
+    <div className="container-center">
+      <Card title="Login Page" bodyStyle={{ width: "600px" }}>
+        <Button type="primary" onClick={onLogin}>
+          Login
+        </Button>
+      </Card>
     </div>
   );
 };

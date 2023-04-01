@@ -1,6 +1,6 @@
 import { Menu, Layout } from "antd";
 import React, { useState } from "react";
-import Link from "../../../router/Link";
+import { Link } from "react-router-dom";
 import { MENU_ITEM } from "../../constans";
 import "./headerComponent.css";
 
@@ -21,7 +21,7 @@ export default function HeaderComponent() {
       }}
     >
       <div className="header-wrapper">
-        <Link href="/">
+        <Link to="/home">
           <div
             style={{
               float: "left",
@@ -33,7 +33,14 @@ export default function HeaderComponent() {
             onClick={() => setCurrent("")}
           />
         </Link>
-        <Menu theme="dark" mode="horizontal" items={MENU_ITEM} disabledOverflow onClick={onClick} selectedKeys={[current]} />
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          items={MENU_ITEM}
+          disabledOverflow
+          onClick={onClick}
+          selectedKeys={[current]}
+        />
       </div>
     </Header>
   );

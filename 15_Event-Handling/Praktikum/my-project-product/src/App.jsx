@@ -8,7 +8,7 @@ import CreateAccount from "./pages/createAccount/CreateAccount";
 
 function App() {
   return (
-    <div className="App">
+    <div class Name="App">
       <div>
         <Route path="/create-product">
           <CreateProduct />
