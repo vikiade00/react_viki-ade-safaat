@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Menu, theme } from "antd";
-import { MENU_ITEM } from "../constans";
+import { MENU_ITEM } from "../constants";
 import FooterComponent from "./footer/FooterComponent";
 import HeaderComponent from "./header/HeaderComponent";
 

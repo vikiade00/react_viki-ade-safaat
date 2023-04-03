@@ -7,6 +7,7 @@ import FormComponent from "../pages/FormPage/FormComponent";
 import HomePage from "../pages/HomePage/HomePage";
 import Contact from "../pages/Contact/Contact";
 import AboutMe from "../pages/AboutMe/aboutMe";
+import FormExp from "../pages/FormExp/FormExp";
 
 const RouteManagement = () => {
   const token = localStorage.getItem("token");
@@ -33,6 +34,7 @@ const RouteManagement = () => {
               <Route path="/about/:id" element={<AboutMe />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/home" element={<HomePage />} />
+              <Route path="/form-exp" element={<FormExp />} />
             </Routes>
           </LayoutComponent>
         )}
