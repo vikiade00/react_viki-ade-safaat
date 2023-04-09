@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { USERS_DATA } from "./constants";
 import "./aboutme.css";
+import { useGetUsers } from "./hooks/useUsersData";
+import LoadingComponent from "../../components/loadingComponent/LoadingComponent";
+
 const AboutMe = () => {
   const { id } = useParams();
+  const [isLoadingUsersData, usersData, getUsersData] = useGetUsers();
+  console.log(usersData);
+  // const data = id ? USERS_DATA.filter((item) => item.id === id) : USERS_DATA;
 
-  const data = id ? USERS_DATA.filter((item) => item.id === id) : USERS_DATA;
+  useEffect(() => {
+    getUsersData();
+  }, []);
 
   return (
     <div>
       <h1>About Me</h1>
-      {data.map((user) => (
-        <div key={user.id} className="card">
-          <Link to={user.id}>
-            <div>{user.name}</div>
+
+      {isLoadingUsersData ? (
+        <LoadingComponent />
+      ) : (
+        usersData?.map((user) => (
+          <div key={user.id} className="card">
+            <div>{user.firstName}</div>
+            <div>{user.lastName}</div>
             <div>{user.age}</div>
-            <div>{user.hobby}</div>
-          </Link>
-        </div>
-      ))}
+            <div>{user.address}</div>
+          </div>
+        ))
+      )}
     </div>
   );
 };

@@ -1,4 +1,12 @@
-import { Button, Form, Input, Table, Typography, Popconfirm, Space } from "antd";
+import {
+  Button,
+  Form,
+  Input,
+  Table,
+  Typography,
+  Popconfirm,
+  Space,
+} from "antd";
 import React, { useState } from "react";
 import { INITIAL_TABLE_DATA } from "./constants";
 import Gap from "../../components/gap/Gap";
@@ -42,7 +50,11 @@ const FormExp = () => {
         INITIAL_TABLE_DATA.length >= 1 ? (
           <Space>
             <a onClick={() => handleEdit(record)}>Edit</a>
-            <Popconfirm title="Sure to delete?" arrow={false} onConfirm={() => onDelete(record.key)}>
+            <Popconfirm
+              title="Sure to delete?"
+              arrow={false}
+              onConfirm={() => onDelete(record.key)}
+            >
               <a>Delete</a>
             </Popconfirm>
           </Space>
@@ -86,6 +98,7 @@ const FormExp = () => {
   const editData = (values) => {
     const key = rowData?.key;
     const newData = [...data];
+    // mencari index
     const index = data.findIndex((item) => key === item.key);
 
     newData.splice(index, 1, {
@@ -95,6 +108,7 @@ const FormExp = () => {
 
     setData(newData);
     setIsEdit(false);
+    setRowData();
     form.resetFields();
   };
 
@@ -199,7 +213,15 @@ const FormExp = () => {
         ) : (
           <Form.Item shouldUpdate className="submit">
             {() => (
-              <Button type="primary" htmlType="submit" disabled={!form.isFieldsTouched(true) || form.getFieldsError().filter(({ errors }) => errors.length).length > 0}>
+              <Button
+                type="primary"
+                htmlType="submit"
+                disabled={
+                  !form.isFieldsTouched(true) ||
+                  form.getFieldsError().filter(({ errors }) => errors.length)
+                    .length > 0
+                }
+              >
                 Submit
               </Button>
             )}
