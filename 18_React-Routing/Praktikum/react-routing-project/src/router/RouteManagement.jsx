@@ -4,6 +4,7 @@ import LayoutComponent from "../component/layout/LayoutComponent";
 import HomePage from "../pages/homePage/HomePage";
 import CreateProduct from "../pages/createProduct/CreateProduct";
 import CreateAccount from "../pages/createAccount/CreateAccount";
+import DetailProduct from "../pages/createProduct/DetailProduct";
 
 const RouteManagement = () => {
   return (
@@ -12,6 +13,10 @@ const RouteManagement = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/create-product" element={<CreateProduct />} />
+          <Route
+            path="/create-product/:productCode"
+            element={<DetailProduct />}
+          />
           <Route path="/create-account" element={<CreateAccount />} />
         </Routes>
       </LayoutComponent>

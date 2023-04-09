@@ -71,7 +71,6 @@ export default function CreateAccount() {
         />
         <h3>{article.title.en}</h3>
         <p>{article.description.en}</p>
-        <Table columns={TABLE_COLUMNS} />
       </div>
     </div>
   );
