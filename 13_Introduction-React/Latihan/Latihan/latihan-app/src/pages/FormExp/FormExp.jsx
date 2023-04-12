@@ -7,10 +7,18 @@ import {
   Popconfirm,
   Space,
 } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { INITIAL_TABLE_DATA } from "./constants";
 import Gap from "../../components/gap/Gap";
 import Error from "../../components/error/Error";
+import {
+  useUpdateBiodata,
+  userDeleteBiodata,
+  userGetBiodata,
+  userPostBiodata,
+} from "./hooks/useBiodatas";
+import { useParams } from "react-router-dom";
+import LoadingComponent from "../../components/loadingComponent/LoadingComponent";
 
 const FormExp = () => {
   const { Title } = Typography;
@@ -21,6 +29,18 @@ const FormExp = () => {
   const [key, setKey] = useState(data.length + 1);
   const [isEdit, setIsEdit] = useState(false);
   const [rowData, setRowData] = useState();
+
+  const { id } = useParams();
+  const [isLoadingBio, dataBio, getDataBio] = userGetBiodata();
+  const [isLoadingCreateBio, getCreateBio] = userPostBiodata();
+  const [isLoadingDeleteBio, getDeleteBio] = userDeleteBiodata();
+  const [isLoadingUpdateBio, getUpdateBio] = useUpdateBiodata();
+  console.log(userGetBiodata);
+  // const data = id ? USERS_DATA.filter((item) => item.id === id) : USERS_DATA;
+
+  useEffect(() => {
+    getDataBio();
+  }, []);
 
   const TABLE_COLUMNS = [
     {
@@ -53,7 +73,7 @@ const FormExp = () => {
             <Popconfirm
               title="Sure to delete?"
               arrow={false}
-              onConfirm={() => onDelete(record.key)}
+              onConfirm={() => onDelete(record.id)}
             >
               <a>Delete</a>
             </Popconfirm>
@@ -74,42 +94,53 @@ const FormExp = () => {
   };
 
   // delete data
-  const onDelete = (row_key) => {
-    const newData = data.filter((item) => item.key !== row_key);
-    setData(newData);
+  const onDelete = (row_id) => {
+    // const newData = data.filter((item) => item.key !== row_key);
+    // setData(newData);
+    getDeleteBio(row_id, () => {
+      getDataBio();
+    });
   };
 
   //   add data
   const onAdd = (values) => {
-    const newData = [
-      ...data,
-      {
-        key: key,
-        ...values,
-      },
-    ];
+    // const newData = [
+    //   ...data,
+    //   {
+    //     key: key,
+    //     ...values,
+    //   },
+    // ];
 
-    setData(newData);
-    setKey(key + 1);
-    form.resetFields();
+    // setData(newData);
+    // setKey(key + 1);
+    getCreateBio(values, () => {
+      getDataBio();
+      form.resetFields();
+    });
   };
 
   // edit data
   const editData = (values) => {
-    const key = rowData?.key;
-    const newData = [...data];
-    // mencari index
-    const index = data.findIndex((item) => key === item.key);
+    // const key = rowData?.key;
+    // const newData = [...data];
+    // // mencari index
+    // const index = data.findIndex((item) => key === item.key);
 
-    newData.splice(index, 1, {
-      key: key,
-      ...values,
+    // newData.splice(index, 1, {
+    //   key: key,
+    //   ...values,
+    // });
+
+    // setData(newData);
+    const id = rowData.id;
+    getUpdateBio(id, values, () => {
+      getDataBio();
+      useUpdateBiodata();
+      setIsEdit(false);
+      setRowData();
+      form.resetFields();
     });
-
-    setData(newData);
-    setIsEdit(false);
-    setRowData();
-    form.resetFields();
   };
 
   return (
@@ -221,6 +252,7 @@ const FormExp = () => {
                   form.getFieldsError().filter(({ errors }) => errors.length)
                     .length > 0
                 }
+                loading={isLoadingCreateBio}
               >
                 Submit
               </Button>
@@ -232,7 +264,12 @@ const FormExp = () => {
       <Gap height={30} />
 
       {/* Table */}
-      <Table columns={TABLE_COLUMNS} dataSource={data} />
+      <Table
+        rowKey={id}
+        columns={TABLE_COLUMNS}
+        dataSource={dataBio}
+        loading={isLoadingBio}
+      />
     </div>
   );
 };
