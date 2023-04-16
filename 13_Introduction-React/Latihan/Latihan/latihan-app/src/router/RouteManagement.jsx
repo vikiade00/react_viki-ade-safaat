@@ -8,6 +8,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import Contact from "../pages/Contact/Contact";
 import AboutMe from "../pages/AboutMe/aboutMe";
 import FormExp from "../pages/FormExp/FormExp";
+import FormGraphql from "../pages/FormGraphql/FormGraphql";
 
 const RouteManagement = () => {
   const token = localStorage.getItem("token");
@@ -29,7 +30,7 @@ const RouteManagement = () => {
         ) : (
           <LayoutComponent>
             <Routes>
-              <Route path="/form" element={<FormComponent />} />
+              <Route path="/form" element={<FormGraphql />} />
               <Route path="/about" element={<AboutMe />} />
               <Route path="/about/:id" element={<AboutMe />} />
               <Route path="/contact" element={<Contact />} />

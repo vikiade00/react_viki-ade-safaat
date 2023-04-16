@@ -5,5 +5,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.315);
+}
+
+.card-login {
+  display: inline-block;
+}
+
+.button-login {
+  width: 100%;
+}
+
+.radio-grup-register-login {
+  margin-bottom: 20px;
 }

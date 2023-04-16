@@ -3,7 +3,7 @@ import { api } from "../../../api";
 import { message } from "antd";
 
 // get data
-export const userGetBiodata = () => {
+export const useGetBiodata = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
   const getdata = useCallback(async () => {
@@ -24,7 +24,7 @@ export const userGetBiodata = () => {
 };
 
 // create data
-export const userPostBiodata = () => {
+export const usePostBiodata = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const createData = useCallback(async (body, onSuccess) => {
@@ -53,15 +53,16 @@ export const userPostBiodata = () => {
 export const useUpdateBiodata = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const updateBiodata = useCallback(async (id, body, onSuccess) => {
+  const updateData = useCallback(async (id, body, onSuccess) => {
     try {
       setIsLoading(true);
       await api.updateBiodata(id, body);
       onSuccess && onSuccess();
       message.open({
         type: "success",
-        content: "Data Berhasil Di Tambah",
+        content: "Berhasil update data",
       });
+      setIsLoading(false);
     } catch (err) {
       message.open({
         type: "error",
@@ -72,11 +73,11 @@ export const useUpdateBiodata = () => {
     }
   }, []);
 
-  return [isLoading, updateBiodata];
+  return [isLoading, updateData];
 };
 
 // delete data
-export const userDeleteBiodata = () => {
+export const useDeleteBiodata = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const deleteData = useCallback(async (id, onSuccess) => {

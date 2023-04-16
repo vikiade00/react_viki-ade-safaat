@@ -1,33 +1,15 @@
-import { Button, Form, Input, Table, Typography, Popconfirm, Space } from "antd";
-import React, { useEffect, useState } from "react";
-import { INITIAL_TABLE_DATA } from "./constants";
-import Gap from "../../components/gap/Gap";
-import Error from "../../components/error/Error";
-import { useDeleteBiodata, useGetBiodata, usePostBiodata, useUpdateBiodata } from "./hooks/useBiodatas";
-import { useParams } from "react-router-dom";
-import LoadingComponent from "../../components/loadingComponent/LoadingComponent";
+import React, { useState } from "react";
+import { Button, Form, Input, Table, Typography, Popconfirm, Space, message } from "antd";
+import "./formGraphql.css";
+import { ADD_USER, DELETE_USER, GET_USERS, UPDATE_USER } from "./query/users-query";
+import { useMutation, useQuery } from "@apollo/client";
+import { INITIAL_TABLE_DATA } from "./constant";
 
-const FormExp = () => {
-  const { Title } = Typography;
-  const { TextArea } = Input;
+const FormGraphql = () => {
   const [form] = Form.useForm();
-
-  const [data, setData] = useState(INITIAL_TABLE_DATA);
-  const [key, setKey] = useState(data.length + 1);
+  const { TextArea } = Input;
   const [isEdit, setIsEdit] = useState(false);
   const [rowData, setRowData] = useState();
-
-  const { id } = useParams();
-  const [isLoadingBio, dataBio, getDataBio] = useGetBiodata();
-  const [isLoadingCreateBio, getCreateBio] = usePostBiodata();
-  const [isLoadingDeleteBio, getDeleteBio] = useDeleteBiodata();
-  const [isLoadingUpdateBio, getUpdateBio] = useUpdateBiodata();
-  console.log(useGetBiodata);
-  // const data = id ? USERS_DATA.filter((item) => item.id === id) : USERS_DATA;
-
-  useEffect(() => {
-    getDataBio();
-  }, []);
 
   const TABLE_COLUMNS = [
     {
@@ -57,7 +39,7 @@ const FormExp = () => {
         INITIAL_TABLE_DATA.length >= 1 ? (
           <Space>
             <a onClick={() => handleEdit(record)}>Edit</a>
-            <Popconfirm title="Sure to delete?" arrow={false} onConfirm={() => onDelete(record.id)}>
+            <Popconfirm title="Sure to delete?" arrow={false} onConfirm={() => onDelete(record.uuid)}>
               <a>Delete</a>
             </Popconfirm>
           </Space>
@@ -65,74 +47,95 @@ const FormExp = () => {
     },
   ];
 
-  const handleEdit = (data) => {
-    setRowData(data);
+  //   to handle edit button
+  const handleEdit = (row_data) => {
+    setRowData(row_data);
     setIsEdit(true);
   };
 
+  //   to handle cancel button
   const handleCancel = () => {
-    setIsEdit(false);
     setRowData();
+    setIsEdit(false);
     form.resetFields();
   };
 
-  // delete data
-  const onDelete = (row_id) => {
-    // const newData = data.filter((item) => item.key !== row_key);
-    // setData(newData);
-    getDeleteBio(row_id, () => {
-      getDataBio();
+  //   Edit Data from table
+  const onEdit = (values) => {
+    const uuid = rowData.uuid;
+
+    updateUser({
+      variables: { pk_columns: { uuid: uuid }, _set: { ...values } },
+      onCompleted: () => {
+        handleCancel();
+      },
+      onError: (err) => {
+        message.open({
+          type: "error",
+          content: `${err?.message}`,
+        });
+      },
     });
   };
 
-  //   add data
+  // Read Data
+  const { data: usersData, loading: isUsersLoading, error: isUsersError } = useQuery(GET_USERS);
+  console.log(usersData?.users);
+
+  // Add Data
+  const [addUser, { loading: isAddUsersLoading }] = useMutation(ADD_USER, {
+    refetchQueries: [GET_USERS],
+  });
+
+  // Delete Data
+  const [deleteUser, { loading: loadingDelete }] = useMutation(DELETE_USER, {
+    refetchQueries: [GET_USERS],
+  });
+
+  // Update Data
+  const [updateUser, { loading: loadingUpdateUser }] = useMutation(UPDATE_USER, {
+    refetchQueries: [GET_USERS],
+  });
+
+  // const onAdd
   const onAdd = (values) => {
-    // const newData = [
-    //   ...data,
-    //   {
-    //     key: key,
-    //     ...values,
-    //   },
-    // ];
-
-    // setData(newData);
-    // setKey(key + 1);
-    getCreateBio(values, () => {
-      getDataBio();
-      form.resetFields();
+    addUser({
+      variables: {
+        object: {
+          ...values,
+        },
+      },
+      onError: (err) => {
+        message.open({
+          type: "error",
+          content: `${err?.message}`,
+        });
+      },
     });
   };
 
-  // edit data
-  const editData = (values) => {
-    // const key = rowData?.key;
-    // const newData = [...data];
-    // // mencari index
-    // const index = data.findIndex((item) => key === item.key);
-
-    // newData.splice(index, 1, {
-    //   key: key,
-    //   ...values,
-    // });
-
-    // setData(newData);
-    const id = rowData?.id;
-    getUpdateBio(id, values, () => {
-      getDataBio();
-      handleCancel();
+  //   Delete Data from table
+  const onDelete = (row_id) => {
+    deleteUser({
+      variables: { uuid: row_id },
+      onError: (err) => {
+        message.open({
+          type: "error",
+          content: `${err?.message}`,
+        });
+      },
     });
   };
 
   return (
-    <div className="form-data">
-      <Title>Form Biodata Mahasiswa</Title>
-
-      {/* Form */}
+    <div className="form-graphql">
+      <h1>Form Biodata Graphql</h1>
+      <br />
       <Form
         form={form}
         name="bio"
         layout="horizontal"
-        onFinish={isEdit ? editData : onAdd}
+        onFinish={isEdit ? onEdit : onAdd}
         labelAlign="left"
         labelCol={{
           span: 4,
@@ -224,7 +227,7 @@ const FormExp = () => {
         ) : (
           <Form.Item shouldUpdate className="submit">
             {() => (
-              <Button type="primary" htmlType="submit" disabled={!form.isFieldsTouched(true) || form.getFieldsError().filter(({ errors }) => errors.length).length > 0} loading={isLoadingCreateBio}>
+              <Button type="primary" htmlType="submit" disabled={!form.isFieldsTouched(true) || form.getFieldsError().filter(({ errors }) => errors.length).length > 0} loading={isAddUsersLoading}>
                 Submit
               </Button>
             )}
@@ -232,12 +235,10 @@ const FormExp = () => {
         )}
       </Form>
 
-      <Gap height={30} />
-
       {/* Table */}
-      <Table rowKey={id} columns={TABLE_COLUMNS} dataSource={dataBio} loading={isLoadingBio} />
+      <Table rowKey="uuid" columns={TABLE_COLUMNS} dataSource={usersData?.users} loading={isUsersLoading} />
     </div>
   );
 };
 
-export default FormExp;
+export default FormGraphql;

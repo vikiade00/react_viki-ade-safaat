@@ -20,7 +20,7 @@ export const api = {
   createBiodata: (body) => {
     return baseAPI.post(`/biodatas`, body);
   },
-  updateBiodata: (id) => {
+  updateBiodata: (id, body) => {
     return baseAPI.put(`/biodatas/${id}`, body);
   },
   deleteBiodata: (id) => {
