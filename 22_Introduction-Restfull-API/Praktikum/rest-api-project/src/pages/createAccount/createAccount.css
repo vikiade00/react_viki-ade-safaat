@@ -1,0 +1,12 @@
+.container1 {
+  text-align: center;
+  width: min(100% - 40px, 750px);
+  margin-inline: auto;
+  display: block;
+  height: 90vh;
+}
+
+.image-brand {
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
