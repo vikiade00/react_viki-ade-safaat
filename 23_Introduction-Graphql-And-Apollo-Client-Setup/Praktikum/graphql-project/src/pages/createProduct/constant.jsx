@@ -14,7 +14,7 @@ export const INITIAL_TABLE_DATA = [
     productCategory: "1",
     productFreshness: "Brand New",
     productPrice: 1,
-    productCode: generateRandomNumber(),
+    uuid: generateRandomNumber(),
   },
   {
     key: 2,
@@ -23,6 +23,6 @@ export const INITIAL_TABLE_DATA = [
     productCategory: "2",
     productFreshness: "Brand New",
     productPrice: 1,
-    productCode: generateRandomNumber(),
+    uuid: generateRandomNumber(),
   },
 ];

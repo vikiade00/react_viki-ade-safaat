@@ -4,7 +4,6 @@ import LayoutComponent from "../component/layout/LayoutComponent";
 import HomePage from "../pages/homePage/HomePage";
 import CreateProduct from "../pages/createProduct/CreateProduct";
 import CreateAccount from "../pages/createAccount/CreateAccount";
-import DetailProduct from "../pages/createProduct/DetailProduct";
 import LoginPage from "../pages/loginPage/LoginPage";
 import LoadingComponent from "../component/loadingComponent/LoadingComponent";
 

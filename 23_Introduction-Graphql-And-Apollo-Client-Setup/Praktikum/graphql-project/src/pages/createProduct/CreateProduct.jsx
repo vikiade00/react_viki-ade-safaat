@@ -1,29 +1,13 @@
 import React, { useEffect } from "react";
-import {
-  Button,
-  Form,
-  Input,
-  Select,
-  message,
-  Upload,
-  Radio,
-  Space,
-  InputNumber,
-  Table,
-  Popconfirm,
-} from "antd";
+import { Button, Form, Input, Select, message, Upload, Radio, Space, InputNumber, Table, Popconfirm } from "antd";
 import "./createProduct.css";
 import { UploadOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { INITIAL_TABLE_DATA } from "./constant";
 import { v4 as uuidv4 } from "uuid";
 import { Link, useParams } from "react-router-dom";
-import {
-  useDeleteProduct,
-  useGetProduct,
-  usePostProduct,
-  useUpdateProduct,
-} from "./hooks/useProduct";
+import { ADD_PRODUCT, DELETE_PRODUCT, GET_PRODUCT, UPDATE_PRODUCT } from "./query/product-query";
+import { useMutation, useQuery } from "@apollo/client";
 
 // upload file ant desgin
 const generateRandomNumber = () => {
@@ -33,6 +17,7 @@ const generateRandomNumber = () => {
   const fourDigitNumber = decimal % 10000; // ambil 4 digit terakhir dari angka desimal tersebut
   return fourDigitNumber;
 };
+
 const props = {
   name: "file",
   action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
@@ -68,25 +53,30 @@ const CreateProduct = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [rowData, setRowData] = useState();
 
-  const [isLoadingProduct, dataProduct, getDataProduct] = useGetProduct();
-  const [isLoadingCreateProduct, getCreateProduct] = usePostProduct();
-  const [isLoadingUpdateProduct, getUpdateProduct] = useUpdateProduct();
-  const [isLoadingDeleteProduct, getDeleteProduct] = useDeleteProduct();
-
-  console.log({ dataProduct });
+  // READ
+  const { data: productData, loading: isProductLoading, error: isProductError } = useQuery(GET_PRODUCT);
+  console.log(productData?.product);
+  // ADD
+  const [addProduct, { loading: isAddProductLoading }] = useMutation(ADD_PRODUCT, {
+    refetchQueries: [GET_PRODUCT],
+  });
+  // UPDATE
+  const [updateProduct, { loading: loadingUpdateProduct }] = useMutation(UPDATE_PRODUCT, {
+    refetchQueries: [GET_PRODUCT],
+  });
+  // DELETE
+  const [deleteProduct, { loading: loadingDelete }] = useMutation(DELETE_PRODUCT, {
+    refetchQueries: [GET_PRODUCT],
+  });
 
   const { id } = useParams();
-
-  useEffect(() => {
-    getDataProduct();
-  }, []);
 
   // table colums
   const TABLE_COLUMNS = [
     {
       title: "No",
-      dataIndex: "productCode",
-      key: "productCode",
+      dataIndex: "uuid",
+      key: "uuid",
     },
     {
       title: "Product Name",
@@ -115,11 +105,7 @@ const CreateProduct = () => {
         INITIAL_TABLE_DATA.length >= 1 ? (
           <Space>
             <a onClick={() => handleEdit(record)}>Edit</a>
-            <Popconfirm
-              title="Sure to delete?"
-              arrow={false}
-              onConfirm={() => onDelete(record.id)}
-            >
+            <Popconfirm title="Sure to delete?" arrow={false} onConfirm={() => onDelete(record.uuid)}>
               <a>Delete</a>
             </Popconfirm>
           </Space>
@@ -127,38 +113,65 @@ const CreateProduct = () => {
     },
   ];
 
-  // Add Data
+  // ADD DATA
   const onAdd = (values) => {
-    getCreateProduct(values, () => {
-      getDataProduct();
-      form.resetFields();
+    addProduct({
+      variables: {
+        object: {
+          ...values,
+        },
+      },
+      onError: (err) => {
+        message.open({
+          type: "error",
+          content: `${err?.message}`,
+        });
+      },
     });
   };
 
   // Edit data
-  const handleEdit = (data) => {
-    setRowData(data);
+  //   to handle edit button
+  const handleEdit = (row_data) => {
+    setRowData(row_data);
     setIsEdit(true);
   };
 
+  //   to handle cancel button
   const handleCancel = () => {
-    setIsEdit(false);
     setRowData();
+    setIsEdit(false);
     form.resetFields();
   };
 
+  //   Edit Data from table
   const onEdit = (values) => {
-    const id = rowData?.id;
-    getUpdateProduct(id, values, () => {
-      getDataProduct();
-      handleCancel();
+    const uuid = rowData.uuid;
+
+    updateProduct({
+      variables: { pk_columns: { uuid: uuid }, _set: { ...values } },
+      onCompleted: () => {
+        handleCancel();
+      },
+      onError: (err) => {
+        message.open({
+          type: "error",
+          content: `${err?.message}`,
+        });
+      },
     });
   };
 
   // Delete data
   const onDelete = (row_id) => {
-    getDeleteProduct(row_id, () => {
-      getDataProduct();
+    deleteProduct({
+      variables: { uuid: row_id },
+      onError: (err) => {
+        message.open({
+          type: "error",
+          content: `${err?.message}`,
+        });
+      },
     });
   };
 
@@ -170,7 +183,7 @@ const CreateProduct = () => {
         layout="vertical"
         onFinish={isEdit ? onEdit : onAdd}
         initialValues={{
-          productCode: rowData?.productCode,
+          uuid: rowData?.uuid,
         }}
         fields={[
           {
@@ -198,22 +211,14 @@ const CreateProduct = () => {
             { required: true, message: "Product name harus di isi" },
             {
               pattern: /^[a-zA-Z0-9 -]{3,50}$/,
-              message:
-                "Product name harus terdiri dari 3-50 characters dan tidak boleh mengandung simbol",
+              message: "Product name harus terdiri dari 3-50 characters dan tidak boleh mengandung simbol",
             },
           ]}
         >
           <Input placeholder="product name" className="input-text" />
         </Form.Item>
 
-        <Form.Item
-          label="Product Category"
-          className="select-input"
-          name="productCategory"
-          rules={[
-            { required: true, message: "Product category tidak boleh kosong" },
-          ]}
-        >
+        <Form.Item label="Product Category" className="select-input" name="productCategory" rules={[{ required: true, message: "Product category tidak boleh kosong" }]}>
           <Select placeholder="Choose..">
             <Option value="1">1</Option>
             <Option value="2">2</Option>
@@ -269,13 +274,7 @@ const CreateProduct = () => {
             },
           ]}
         >
-          <InputNumber
-            placeholder="$ 1"
-            min={1}
-            max={9999999999999}
-            type="number"
-            className="input-number"
-          />
+          <InputNumber placeholder="$ 1" min={1} max={9999999999999} type="number" className="input-number" />
         </Form.Item>
 
         {isEdit ? (
@@ -289,16 +288,7 @@ const CreateProduct = () => {
         ) : (
           <Form.Item shouldUpdate className="submit">
             {() => (
-              <Button
-                className="submit-button"
-                type="primary"
-                htmlType="submit"
-                disabled={
-                  !form.isFieldsTouched(true) ||
-                  form.getFieldsError().filter(({ errors }) => errors.length)
-                    .length > 0
-                }
-              >
+              <Button className="submit-button" type="primary" htmlType="submit" disabled={!form.isFieldsTouched(true) || form.getFieldsError().filter(({ errors }) => errors.length).length > 0}>
                 Submit
               </Button>
             )}
@@ -307,12 +297,7 @@ const CreateProduct = () => {
       </Form>
 
       {/* Table */}
-      <Table
-        rowKey={id}
-        columns={TABLE_COLUMNS}
-        dataSource={dataProduct}
-        loading={isLoadingProduct}
-      />
+      <Table rowKey={id} columns={TABLE_COLUMNS} dataSource={productData?.product} loading={isProductLoading} />
     </div>
   );
 };
